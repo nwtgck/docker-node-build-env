@@ -8,11 +8,14 @@ ENV CC='ccache gcc-4.9'
 ENV CXX='ccache g++-4.9'
 ENV JOBS=2
 
-# (TODO: Make them ono-line RUN)
-# (TODO: Remove cahces)
-RUN apt update
-RUN apt install -y software-properties-common
-RUN add-apt-repository ppa:ubuntu-toolchain-r/test
-RUN apt update
-RUN apt install -y g++-4.9 python ccache
-RUN apt install -y build-essential
+RUN apt update && \
+    apt install -y software-properties-common && \
+    add-apt-repository ppa:ubuntu-toolchain-r/test && \
+    apt update && \
+    apt install -y \
+      g++-4.9 \
+      python \
+      ccache \
+      build-essential && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
