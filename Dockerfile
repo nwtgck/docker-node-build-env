@@ -1,11 +1,11 @@
 # (base: https://github.com/nodejs/node/blob/1ae0511b942c01c6e0adff98643d350a395bf101/.travis.yml)
 
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 LABEL maintainer="Ryo Ota <nwtgck@nwtgck.org>"
 
-ENV CC='ccache gcc-4.9'
-ENV CXX='ccache g++-4.9'
+ENV CC='ccache gcc-6'
+ENV CXX='ccache g++-6'
 ENV JOBS=2
 
 RUN apt update && \
@@ -13,7 +13,7 @@ RUN apt update && \
     add-apt-repository ppa:ubuntu-toolchain-r/test && \
     apt update && \
     apt install -y \
-      g++-4.9 \
+      g++-6 \
       python \
       ccache \
       build-essential && \
