@@ -2,7 +2,7 @@
 
 FROM ubuntu:16.04
 
-LABEL maintainer="Ryo Ota <nwtgck@gmail.com>"
+LABEL maintainer="Ryo Ota <nwtgck@nwtgck.org>"
 
 ENV CC='ccache gcc-4.9'
 ENV CXX='ccache g++-4.9'
