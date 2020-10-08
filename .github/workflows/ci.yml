@@ -14,7 +14,7 @@ jobs:
         cd node
         git checkout $NODE_REVISION
       env:
-        NODE_REVISION: 156e4c8e89616a3f128453ff43cac5103a8226fa
+        NODE_REVISION: v12.19.0
     - name: "Working test - build node"
       run: |
         docker run --rm -i -v $PWD/node:/build/node node-build-env /bin/bash << EOF
